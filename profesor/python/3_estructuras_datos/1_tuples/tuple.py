@@ -30,3 +30,6 @@ print(copia_tupla2)
 # recorrer tupla
 for item in tupla2:
     print(item)
+
+# eliminar un tupla
+del tupla2
