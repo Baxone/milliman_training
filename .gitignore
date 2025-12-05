@@ -1,0 +1,30 @@
+# Entorno virtual
+.venv/
+
+# Archivos y carpetas de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración locales
+.env
+*.env
+
+# Carpetas de cache de herramientas
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# Configuración del editor
+.vscode/
+.idea/
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Distribución y compilación
+build/
+dist/
+*.egg-info/
