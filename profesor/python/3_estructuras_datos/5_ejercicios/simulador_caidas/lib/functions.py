@@ -1,5 +1,19 @@
 
-def get_clients_by_tramo(clients_list, tramo): 56
+def get_clients_by_tramo(clients_list, tramo):
+    # obtener la edad maxima de mi bbdd para saber el valor maximo de mi tramo.
+    max_age = max(client['age'] for client in clients_list)
+
+    # Crear un lista que contenido sublista mas pequeñas por tramos
+    tramos = []
+    start = 0
+    while start <= max_age:
+        end = start + tramo
+        # filtrar clientes dentro del tramo actual
+        grupo = list(filter(
+            lambda client: client['age'] >= start and client['age'] < end, clients_list))
+        tramos.append(grupo)
+        start = end
+    return tramos
 
 
 def get_total_caidas(clients_list):
@@ -13,7 +27,7 @@ def get_total_caidas(clients_list):
 def percent_global(clients_list):
     total = len(clients_list)  # 20polizas
     total_caidas = get_total_caidas(clients_list)
-    print(f"{(total_caidas / total ) * 100}%")
+    print(f"{((total_caidas / total) * 100):.2f}%")
 
 
 def get_data():

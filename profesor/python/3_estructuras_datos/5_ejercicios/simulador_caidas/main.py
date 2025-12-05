@@ -16,7 +16,8 @@ def main():
     elif option == "2":
         tramo = int(input('Dime cuantos años quieres por tramo: '))
         clients_filter = get_clients_by_tramo(data, tramo)
-        print(clients_filter)
+        for grupo in clients_filter:
+            percent_global(grupo)
     elif option == "x":
         print('Hasta pronto')
     else:
