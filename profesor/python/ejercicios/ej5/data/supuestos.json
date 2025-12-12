@@ -1,0 +1,7 @@
+{
+    "tasa_descuento_base": 0.01,
+    "escenario": "base",
+    "anios_proyeccion": 30,
+    "incremento_tasa_anual": 0.0005,
+    "metodo_proyeccion": "prospectiva_mensual"
+}
