@@ -1,0 +1,45 @@
+[project]
+name = "proyecto-documentacion"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.3.3",
+    "sphinx>=9.0.4",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 79
+
+# Conjunto equilibrado de buenas prácticas:
+# - pycodestyle/pyflakes (PEP8 + errores reales)
+# - isort (imports)
+# - pep8-naming (snake_case / PascalCase)
+# - bugbear (bugs típicos)
+# - pyupgrade (moderniza sintaxis)
+select = ["E", "W", "F", "I", "N", "B", "UP"]
+
+# Evita conflictos típicos con formateadores en slices
+ignore = ["E203"]
+
+# Activa "autofix" para que Ruff pueda eliminar imports no usados, etc.
+fix = true
+
+[tool.ruff.lint]
+# Mantengo aquí la misma selección por compatibilidad con versiones nuevas de Ruff.
+select = ["E", "W", "F", "I", "N", "B", "UP"]
+ignore = ["E203"]
+
+[tool.ruff.lint.isort]
+# Ordena alfabéticamente dentro de cada grupo y respeta el estándar de secciones
+combine-as-imports = true
+force-sort-within-sections = true
+order-by-type = false
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true
