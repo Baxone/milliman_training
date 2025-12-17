@@ -28,7 +28,10 @@ def main():
     cortes = [18,30,40,50,60,120]
     labels = ['18-29', '30-39', '40-49', '50-59', '60+' ]
     tabla_final['banda_edad'] = pd.cut(tabla_final['edad'], bins=cortes, labels=labels)
-    print(tabla_final.head())
+    #print(tabla_final.head())
+    
+    # una vez que tenemos una tabla resultante queremos exportarla a excel con pandas.
+    tabla_final.to_excel('./data/resultado.xlsx', sheet_name='Rangos de edad', index=False)
 
 if __name__ == "__main__":
     main()
